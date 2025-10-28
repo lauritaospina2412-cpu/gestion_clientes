@@ -1,0 +1,29 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+
+    <div class="text-center mb-4" style="margin-top: 12%;">
+       <img src="/assets/dist/images/logo.png" alt="Logo" style="max-height: 80px;">
+    </div>
+
+    <%= form_with url: login_path, method: :post, data: { turbo: false }, class: "card p-4 shadow" do %>
+
+      <div class="mb-3">
+        <label class="form-label">Usuario</label>
+        <%= text_field_tag :username, nil, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <%= password_field_tag :password, nil, class: "form-control" %>
+      </div>
+
+      <%= submit_tag "Ingresar", class: "btn btn-primary w-100" %>
+
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger mt-3"><%= flash[:alert] %></div>
+    <% end %>
+
+  </div>
+</div>
