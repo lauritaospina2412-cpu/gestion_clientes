@@ -1,6 +1,6 @@
 # Configurar SimpleCov antes de cargar Rails
-require 'simplecov'
-SimpleCov.start 'rails'
+require "simplecov"
+SimpleCov.start "rails"
 
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"

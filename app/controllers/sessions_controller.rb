@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   # Excluir login de la autenticación básica
-  skip_before_action :authenticate, only: [:new, :create]
+  skip_before_action :authenticate, only: [ :new, :create ]
 
   def new
     # formulario de login

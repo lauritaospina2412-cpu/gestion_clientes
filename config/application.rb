@@ -38,6 +38,5 @@ module GestionClientes
     config.api_only = false
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-
   end
 end

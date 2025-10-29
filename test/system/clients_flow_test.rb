@@ -9,12 +9,12 @@ class ClientsFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "full CRUD flow" do
-    # INDEX 
+    # INDEX
     get clients_path, session: @session
     assert_response :success
     assert_equal 3, assigns(:clients).size
 
-    # CREATE 
+    # CREATE
     post clients_path, params: { client: { name: "Ana Torres", email: "ana@example.com", phone: "3123456789" } }, session: @session
     assert_redirected_to clients_path
     follow_redirect!
@@ -34,7 +34,7 @@ class ClientsFlowTest < ActionDispatch::IntegrationTest
     client = read_clients.find { |c| c["id"] == "1" }
     assert_equal "Juan Actualizado", client["name"]
 
-    # DESTROY 
+    # DESTROY
     delete client_path("2"), session: @session
     assert_redirected_to clients_path
     follow_redirect!

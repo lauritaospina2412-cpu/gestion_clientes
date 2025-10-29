@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
     before_action :require_login
-    before_action :set_client, only: [:edit, :update, :destroy]
+    before_action :set_client, only: [ :edit, :update, :destroy ]
 
     def index
         @clients = ClientRepository.all
