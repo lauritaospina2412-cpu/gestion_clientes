@@ -24,7 +24,10 @@ module JsonTestHelper
   def ensure_data_file
     dir = File.dirname(DATA_FILE)
     FileUtils.mkdir_p(dir) unless Dir.exist?(dir)
-    write_clients(default_clients) unless File.exist?(DATA_FILE)
+    # Crear el archivo solo si no existe, sin llamar de nuevo a write_clients
+    unless File.exist?(DATA_FILE)
+      File.write(DATA_FILE, JSON.pretty_generate({ "clients" => default_clients }))
+    end
   end
 
   # Leer clientes del archivo JSON
@@ -41,7 +44,7 @@ module JsonTestHelper
 
   # Restaurar JSON a su estado inicial
   def reset_clients
-    write_clients(default_clients)
+    File.write(DATA_FILE, JSON.pretty_generate({ "clients" => default_clients }))
   end
 end
 

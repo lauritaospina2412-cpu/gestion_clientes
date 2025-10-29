@@ -5,17 +5,23 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
     reset_clients
-    @session = { logged_in: true } # Simular login
+    # Simular autenticación HTTP Basic
+    @auth_headers = {
+      "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials("admin", "admin123")
+    }
   end
 
   test "index shows all clients" do
-    get clients_path, session: @session
+    get clients_path, headers: @auth_headers
     assert_response :success
     assert_equal 3, assigns(:clients).size
   end
 
   test "create a new client" do
-    post clients_path, params: { client: { name: "Ana Torres", email: "ana@example.com", phone: "3123456789" } }, session: @session
+    post clients_path,
+         params: { client: { name: "Ana Torres", email: "ana@example.com", phone: "3123456789" } },
+         headers: @auth_headers
+
     assert_redirected_to clients_path
     follow_redirect!
     assert_match "Cliente creado con éxito", flash[:notice]
@@ -25,7 +31,10 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update a client" do
-    patch client_path("1"), params: { client: { name: "Juan Actualizado" } }, session: @session
+    patch client_path("1"),
+          params: { client: { name: "Juan Actualizado" } },
+          headers: @auth_headers
+
     assert_redirected_to clients_path
     follow_redirect!
     assert_match "Cliente actualizado correctamente", flash[:notice]
@@ -35,7 +44,8 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "destroy a client" do
-    delete client_path("2"), session: @session
+    delete client_path("2"), headers: @auth_headers
+
     assert_redirected_to clients_path
     follow_redirect!
     assert_match "Cliente eliminado correctamente", flash[:notice]
