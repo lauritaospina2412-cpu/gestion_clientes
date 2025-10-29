@@ -53,6 +53,7 @@ jobs:
       - name: Rubocop lint
         run: bin/rubocop -f github
 
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -67,6 +68,9 @@ jobs:
 
       - name: Install system dependencies
         run: sudo apt-get update && sudo apt-get install -y build-essential git libyaml-dev pkg-config
+
+      - name: Check data folder (debug)
+        run: ls -la data
 
       - name: Run tests
         env:
