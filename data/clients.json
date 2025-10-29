@@ -17,18 +17,7 @@
       "name": "Carlos Rodríguez",
       "email": "carlos.rodriguez@example.com",
       "phone": "3116549870"
-    },
-    {
-      "id": "ae65fc00-4725-47e7-b98e-ff2899d14c31",
-      "name": "Prueba Edit",
-      "email": "prueba@prueba.com",
-      "phone": "123456789"
-    },
-    {
-      "id": "069e19c9-c938-4a58-a9c6-5cbeff1f24a5",
-      "name": "Laura Valemtina Bautista",
-      "email": "laura@exampleedit.co",
-      "phone": "31235646435"
     }
+    
   ]
 }
