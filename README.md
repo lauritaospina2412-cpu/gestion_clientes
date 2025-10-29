@@ -104,20 +104,20 @@ Archivo de almacenamiento:
 
 ## 💻 Instalación y Ejecución
 
-### 1️⃣ Clonar el repositorio
+### 1-Clonar el repositorio
 
 ```bash
 git clone https://github.com/tu_usuario/gestion_clientes.git
 cd gestion_clientes
 ```
 
-### 2️⃣ Instalar dependencias
+### 2️-Instalar dependencias
 
 ```bash
 bundle install
 ```
 
-### 3️⃣ Ejecutar el servidor
+### 3- Ejecutar el servidor
 
 ```bash
 rails s
