@@ -1,23 +1,7 @@
-# 🧠 MyClient
+# MyClient
 
 Mini proyecto de **Integración Continua (CI)** desarrollado en **Ruby on Rails**, como parte de la asignatura **Ingeniería Web I**.  
 El sistema permite la **gestión de clientes (CRUD)** utilizando un archivo JSON en lugar de una base de datos, integrando **buenas prácticas de arquitectura (MVC)**, **seguridad**, **pruebas automatizadas** y un **pipeline CI/CD con GitHub Actions**.
-
----
-
-## 📋 Contenido
-
-1. [Descripción General](#descripción-general)  
-2. [Alcance](#alcance)  
-3. [Objetivo](#objetivo)  
-4. [Requerimientos](#requerimientos)  
-5. [Arquitectura de la Solución](#arquitectura-de-la-solución)  
-6. [Endpoints JSON](#endpoints-json)  
-7. [Instalación y Ejecución](#instalación-y-ejecución)  
-8. [Pruebas Automatizadas](#pruebas-automatizadas)  
-9. [Integración Continua (CI)](#integración-continua-ci)  
-10. [Credenciales por Defecto](#credenciales-por-defecto)  
-11. [Autoría](#autoría)
 
 ---
 
