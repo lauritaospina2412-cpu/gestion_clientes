@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-
   USER = "admin"
-  PASS = "admin123"
+  PASS = ENV["ADMIN_PASSWORD"] || "admin123"
 
+  # Protege todas las acciones por HTTP Basic Auth
   before_action :authenticate
 
   private
@@ -12,5 +12,4 @@ class ApplicationController < ActionController::Base
       user == USER && pass == PASS
     end
   end
-  
 end
